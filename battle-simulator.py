@@ -4,6 +4,7 @@ class Pokemon:
         self.type1 = type1
         self.type2 = type2
         self.category = category
+        moves = []
 
     def __repr__(self):
         description = ""
@@ -13,6 +14,20 @@ class Pokemon:
         else:
             description = "{species}, the {category} Pokemon. It's {type1}-type."
             return description.format(species = self.species, category = self.category, type1 = self.type1)
+    
+    def learn_move(self, move):
+        if type(move) is Move:
+            if len(self.moves) <= 4:
+                print("1.. 2.. 3.. TA DA!")
+                self.moves.append(move)
+                print("{species} has learn {move}!".format(species = self.species, move = move))
+            else:
+                print("1.. 2.. 3.. TA DA!")
+                print("{species} has forgotten {old_move} and has learn {new_move}".format(species = self.species, old_move = self.moves[-1], new_move = move))
+                self.moves[-1] = move
+            if move in self.moves:
+                print("{species} already knows {move}.".format(species = self.species, move = move))
+
 
 class Move:
     def __init__(self, name, mtype, mclass):
