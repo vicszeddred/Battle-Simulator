@@ -43,3 +43,16 @@ class Move:
         else:
             description = "{name}, it's a {mtype}-type move."
             return description.format(name = self.name, mtype = self.mtype)
+
+
+pikachu = Pokemon("Pikachu", "electric mouse", "Electric")
+pidgey = Pokemon("Pidgey", "tiny bird", "normal", "flying")
+caterpie = Pokemon('Caterpie', 'worm', 'bug')
+weedle = Pokemon('Weedle', 'hairy worm', 'bug', 'poison')
+ratatta = Pokemon('Ratatta', 'mouse', 'normal')
+nidoranM = Pokemon('Nidoran♂', 'poison pin', 'poison')
+nidoranF = Pokemon('Nidoran♀', 'poison pin', 'poison')
+mankey = Pokemon("Mankey", 'pig monkey', 'fighthing')
+bulbasaur = Pokemon('Bulbasaur', 'seed', 'grass', 'poison')
+charmander = Pokemon('Charmander', 'lizard', 'fire')
+squirtle = Pokemon('Squirtle', ' tiny turtle', 'water')
