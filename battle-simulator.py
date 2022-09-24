@@ -37,14 +37,14 @@ class Move:
 
     def __repr__(self):
         description = ""
-        if self.type == "Electric" or self.type == "Ice":
+        if self.mtype == "Electric" or self.mtype == "Ice":
             description = "{name}, it's an {mtype}-type move."
             return description.format(name = self.name, mtype = self.mtype)
         else:
             description = "{name}, it's a {mtype}-type move."
             return description.format(name = self.name, mtype = self.mtype)
 
-
+#First stage pokemon"
 pikachu = Pokemon("Pikachu", "electric mouse", "Electric")
 pidgey = Pokemon("Pidgey", "tiny bird", "normal", "flying")
 caterpie = Pokemon('Caterpie', 'worm', 'bug')
@@ -56,3 +56,39 @@ mankey = Pokemon("Mankey", 'pig monkey', 'fighthing')
 bulbasaur = Pokemon('Bulbasaur', 'seed', 'grass', 'poison')
 charmander = Pokemon('Charmander', 'lizard', 'fire')
 squirtle = Pokemon('Squirtle', ' tiny turtle', 'water')
+
+#Second stage pokemon
+raichu = Pokemon("Raichu", "mouse", "Electric")
+pidgeotto = Pokemon("Pidgeotto", "bird", "Normal", "Flying")
+metapod = Pokemon("Metapod", "cocoon", "Bug")
+kakuna = Pokemon("Kakuna", "cocoon", "Bug", "Poison")
+raticate = Pokemon("Raticate", "mouse", "Normal")
+nidorino = Pokemon("Nidorino", "poison pin", "Poison")
+nidorina = Pokemon("Nidorina", "poison pin", "Poison")
+primeape = Pokemon("Primeape", "pig monkey", "Fighthing")
+ivysaur = Pokemon("Ivysaur", "seed", "grass", "Poison")
+charmeleon = Pokemon("Charmeleon", "flame", "Fire")
+wartotle = Pokemon("Wartotle", "turtle", "Water")
+
+#Third stage pokemon
+pidgeot = Pokemon("Pidgeot", "bird", "Normal", "Flying")
+butterfree = Pokemon("Butterfree", "butterfly", "Bug", "flying")
+beedrill = Pokemon("Beedrill", "poison bee", "Bug", "Poison")
+nidoking = Pokemon("Nidoking", "poison pin", "Poison", "Ground")
+nidoqueen = Pokemon("Nidoqueen", "poison pin", "Poison", "Ground")
+venasaur = Pokemon("Venasaur", "seed", "grass", "Poison")
+charizard = Pokemon("Charizard", "flame", "Fire", "Flying")
+blastoise = Pokemon("Blastoise", "shellfish", "Water")
+
+#moves
+thunderShock = Move("Thunder Shock", "Electric", "Special")
+vineWhip = Move("Vine Whip", "Grass", "Physical")
+waterGun = Move("Water Gun", "Water", "Special")
+tackle = Move("Tackle", "Normal", "Physical")
+poisonSting = Move("Poison Sting", "Poison", "Physical")
+bugBite = Move("Bug Bite", "Bug", "Physical")
+gust = Move("Gust", "Flying", "Special")
+doubleKick = Move("Double Kick", "Fighthing", "Physical")
+ember = Move("Ember", "Fire", "Special")
+tailWhip = Move("Tail Whip", "Normal", "Status")
+growl = Move("Growl", "Normal", "Status")
