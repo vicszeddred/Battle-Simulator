@@ -1,3 +1,5 @@
+import random
+
 class Pokemon:
     def __init__(self, species, category, type1, type2 = ""):
         self.species = species
@@ -43,6 +45,26 @@ class Move:
         else:
             description = "{name}, it's a {mtype}-type move."
             return description.format(name = self.name, mtype = self.mtype)
+
+class Trainer:
+  def __init__(self, name, age, money = 300):
+    self.name = name
+    self.age = age
+    self.money = money
+    self.pokemon_team = []
+    self.pc = []
+
+  def __repr__(self):
+    return "{name} is {age} and currently has {team} pokemon in its pokemon team.".format(name = self.name, age = self.age, team = len(self.pokemon_team))
+
+  def capture_pokemon(self, pokemon):
+    if type(pokemon) is Pokemon:
+      if len(self.pokemon_team) <= 6:
+        self.pokemon_team.append(pokemon)
+        print("You caught {}!".format(pokemon))
+      else:
+        print("{pokemon} has been send to the PC".format(pokemon))
+        self.pc.append(pokemon)
 
 #First stage pokemon"
 pikachu = Pokemon("Pikachu", "electric mouse", "Electric")
@@ -92,3 +114,32 @@ doubleKick = Move("Double Kick", "Fighthing", "Physical")
 ember = Move("Ember", "Fire", "Special")
 tailWhip = Move("Tail Whip", "Normal", "Status")
 growl = Move("Growl", "Normal", "Status")
+
+all_pokemon = [pikachu, pidgey, bulbasaur, charmander, squirtle, weedle, caterpie, ratatta, nidoranM, nidoranF, mankey, raichu, pidgeotto, ivysaur, charmeleon, wartotle, kakuna, metapod, raticate, nidorino, nidorina, pidgeot, venasaur, charizard, blastoise, beedrill, butterfree, nidoking, nidoqueen, primeape]
+
+trainer_red = Trainer("Red", 11)
+def create_pokemon_team():
+    count = 0
+    while count <= 6:
+        trainer_red.capture_pokemon(all_pokemon[random.randint(0, len(all_pokemon) - 1)])
+        count += 1
+
+easy = [pikachu, pidgey, bulbasaur, charmander, squirtle, weedle, caterpie, ratatta, nidoranM, nidoranF, mankey]
+normal = [raichu, pidgeotto, ivysaur, charmeleon, wartotle, kakuna, metapod, raticate, nidorino, nidorina]
+hard = [pidgeot, venasaur, charizard, blastoise, beedrill, butterfree, nidoking, nidoqueen, primeape]
+
+def wild_battle(difficulty):
+    if difficulty.lower() == "easy":
+        print("A wild {pokemon} has appeared.".format(pokemon = easy[random.randint(0, len(easy) - 1)]))
+    if difficulty.lower() == "normal":
+        print("A wild {pokemon} has appeared.".format(pokemon = normal[random.randint(0, len(normal) - 1)]))
+    if difficulty.lower() == "hard":
+        print("A wild {pokemon} has appeared.".format(pokemon = hard[random.randint(0, len(hard) - 1)]))
+    print("go {mypokemon}!".format(mypokemon = trainer_red.pokemon_team[0]))
+    option = input("What would you do? (battle  pokemon     run) ")
+    if option.lower() == "run":
+        print("you have run away")
+
+difficulty = input("Choose a difficulty: (easy   normal  hard) ")
+create_pokemon_team()
+wild_battle(difficulty)
