@@ -50,24 +50,27 @@ class Move:
             return description.format(name = self.name, mtype = self.mtype)
 
 class Trainer:
-  def __init__(self, name, age, money = 300):
-    self.name = name
-    self.age = age
-    self.money = money
-    self.pokemon_team = []
-    self.pc = []
+    def __init__(self, name, age, money = 300):
+        self.name = name
+        self.age = age
+        self.money = money
+        self.pokemon_team = []
+        self.pc = []
 
-  def __repr__(self):
-    return "{name} is {age} and currently has {team} pokemon in its pokemon team.".format(name = self.name, age = self.age, team = len(self.pokemon_team))
+    def __repr__(self):
+        return "{name} is {age} and currently has {team} pokemon in its pokemon team.".format(name = self.name, age = self.age, team = len(self.pokemon_team))
 
-  def capture_pokemon(self, pokemon):
-    if type(pokemon) is Pokemon:
-      if len(self.pokemon_team) <= 6:
-        self.pokemon_team.append(pokemon)
-        print("You caught {}!".format(pokemon))
-      else:
-        print("{pokemon} has been send to the PC".format(pokemon))
-        self.pc.append(pokemon)
+    def capture_pokemon(self, pokemon):
+        if type(pokemon) is Pokemon:
+            if len(self.pokemon_team) <= 6:
+                self.pokemon_team.append(pokemon)
+                print("You caught {}!".format(pokemon))
+        else:
+            print("{pokemon} has been send to the PC".format(pokemon))
+            self.pc.append(pokemon)
+
+    def get_pokemon_team(self):
+        return self.pokemon_team
 
 #First stage pokemon"
 pikachu = Pokemon("Pikachu", "electric mouse", "Electric")
