@@ -30,6 +30,9 @@ class Pokemon:
             if move in self.moves:
                 print("{species} already knows {move}.".format(species = self.species, move = move))
 
+    def get_moves(self):
+        return self.moves
+
 
 class Move:
     def __init__(self, name, mtype, mclass):
